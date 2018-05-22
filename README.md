@@ -26,4 +26,4 @@ this script make a Task for help to remember this important activities.
 
 **verifyconnectedtime**: This script verify all registers of activities of a company and check that this users register your time in your projects.
 
-![How is works](https://github.com/ArmandAguilar/rutinasmmsql/blob/master/Driagram/Diagram.png)
+![How is works](https://github.com/ArmandAguilar/connectedtime/blob/master/Diagrama/Diagrama.png)
