@@ -48,7 +48,7 @@ def create_a_task(dayStart,dayEnd,listUser,listGrantAcces):
     data['todo-item']['content'] = 'Hay un problema con tú registro de actividades periodo ' + str(dayStart) + ' al '  +  str(dayEnd)
     data['todo-item']['responsible-party-id'] = listUser
     data['todo-item']['notify'] = 'true'
-    data['todo-item']['description'] = 'Hola revisando las actividades de tus projectos , he notado que te faltan dias por registrar.'
+    data['todo-item']['description'] = 'Hola revisando las actividades de tus proyectos , he notado que te faltan dias por registrar.'
     #data['todo-item']['due-date'] = ''
     #data['todo-item']['start-date'] = ''
     data['todo-item']['grant-access-to'] = listGrantAcces
@@ -56,5 +56,3 @@ def create_a_task(dayStart,dayEnd,listUser,listGrantAcces):
     dataJson = json.dumps(data)
     r = requests.post( url  + '/tasklists/1671606/tasks.json', auth=(keyBot, ''), data=dataJson)
     return r.text
-
-#print (create_a_task(dayStart='2018-05-14',dayEnd='2018-05-18',listUser='216004,215992',listGrantAcces='216004,215992'))

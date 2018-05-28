@@ -8,6 +8,7 @@ from tokensTeamWork import *
 from teamworkcreateatask import *
 from urllib2 import urlopen,base64
 import sys
+import time
 from datetime import datetime, timedelta
 reload(sys)
 
@@ -41,8 +42,11 @@ def getDays(startDate,endDate):
     return laborabledays
 
 def getDaysLastWeek():
-    # Set Monday Today
-    mondayDay = datetime(2018, 5, 21)
+    # Set Monday Today print time.strftime('%d %m %y')
+    Year = int(time.strftime('%Y'))
+    Mount = int(time.strftime('%m'))
+    Day = int(time.strftime('%d'))
+    mondayDay = datetime(Year, Mount, Day)
     fridaySet = mondayDay + timedelta(days=-3)
     friday = fridaySet
     monday = fridaySet + timedelta(days=-4)
@@ -86,8 +90,8 @@ def verifyConnectedTime():
             print('Cear Tareas de registro')
             print('Dias registrado ' + str(count_days_user) + '/5')
             count_days_user = 0
-            #create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
-            print('dayStart=' + str(listdays[0]) +  'dayEnd=' + str(listdays[4]) + 'listUser=' + str(listUsers) +  'listGrantAcces=' + str(listGrantAcces))
+            create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
+            print('dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
 
 
 #############################################################################################
@@ -97,34 +101,5 @@ def verifyConnectedTime():
 ##                                                                                         ##
 #############################################################################################
 
-#https://forta.teamwork.com/time.json?userId=216004&fromDate=20180501&toDate=20180515
 
-#listuser = getAllUser()
-
-#listdays = getDays('2018-01-01','2018-01-31')
-#listdays = getDaysLastWeek()
-#here count all days
-#count_day = len(listdays)
-#count_days_user = 0
-#print(listdays)
-#here ask if there are day in the teamwork
-
-#for dataUser in listuser['people']:
-#    print('ID:' + str(dataUser['id']) + ' Name:' + str(dataUser['first-name'] + ' ' + str(dataUser['last-name'])))
-    #Here count  numbers'  days resgtred for the user
-#    for day in listdays:
-#        d1 = day.replace('-', '')
-#        r = requests.get(url + '/time.json?userId=' + str(dataUser['id']) + '&fromDate=' + str(d1), auth=(key, ''))
-#        data = json.loads(r.text, encoding='utf-8', cls=None, object_hook=None, parse_float=None, parse_int=None,parse_constant=None, object_pairs_hook=None)
-#        registerDays = len(data['time-entries'])
-#        if registerDays > 0:
-#            count_days_user +=1
-
-#    if  count_days_user == count_day:
-#        print('Todo oka')
-#        count_days_user = 0
-#    else:
-#        print('Cear Tareas de registro')
-#        print('Dias registrado '+ str(count_days_user) + '/5')
-#        count_days_user = 0
 
