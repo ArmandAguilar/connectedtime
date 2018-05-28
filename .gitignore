@@ -1,3 +1,4 @@
 tokensTeamWork.py
 /osv
-.idea
+*.idea
+*.pyc
