@@ -95,8 +95,6 @@ def verifyConnectedTime():
             elif dataUser['id'] == '308890':
                 vacio = 0
             else:
-                #
-
                 listUsers = '216004,215992'
                 listUsers += ',' + str(dataUser['id'])
                 listGrantAcces = '216004,215992'
