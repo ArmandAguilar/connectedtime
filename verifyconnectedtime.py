@@ -66,9 +66,11 @@ def verifyConnectedTime():
     #Here count and set day to verify
     count_day = len(listdays)
     count_days_user = 0
+    #Count of taskcreate
+    count_task = 0
     #here ask if there are day in the teamwork without fill
     for dataUser in listuser['people']:
-        print('ID:' + str(dataUser['id']) + ' Name:' + str(dataUser['first-name'] + ' ' + str(dataUser['last-name'])))
+
         # Here count  numbers'  days resgtred for the user
         for day in listdays:
             d1 = day.replace('-', '')
@@ -80,20 +82,23 @@ def verifyConnectedTime():
                 count_days_user += 1
 
         if count_days_user == count_day:
-            print('Todo oka')
             count_days_user = 0
         else:
+            print('ID:' + str(dataUser['id']) + ' Name:' + str(dataUser['first-name'] + ' ' + str(dataUser['last-name'])))
             listUsers = '216004,215992'
             listUsers += ',' + str(dataUser['id'])
             listGrantAcces = '216004,215992'
             listGrantAcces += ',' + str(dataUser['id'])
+            count_task += 1
             print('Cear Tareas de registro')
             print('Dias registrado ' + str(count_days_user) + '/5')
+            print(str(count_task) + '.-' + 'dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
+            #create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
             count_days_user = 0
-            create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
-            print('dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
 
 
+    print ('---------------------------------------------------------------------')
+    print ('Total create task :' + str(count_task))
 #############################################################################################
 ##                                                                                         ##
 ##                                                                                         ##
