@@ -84,17 +84,31 @@ def verifyConnectedTime():
         if count_days_user == count_day:
             count_days_user = 0
         else:
-            print('ID:' + str(dataUser['id']) + ' Name:' + str(dataUser['first-name'] + ' ' + str(dataUser['last-name'])))
-            listUsers = '216004,215992'
-            listUsers += ',' + str(dataUser['id'])
-            listGrantAcces = '216004,215992'
-            listGrantAcces += ',' + str(dataUser['id'])
-            count_task += 1
-            print('Cear Tareas de registro')
-            print('Dias registrado ' + str(count_days_user) + '/5')
-            print(str(count_task) + '.-' + 'dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
-            create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
-            count_days_user = 0
+            if dataUser['id'] == '295218':
+                vacio = 0
+            elif dataUser['id'] == '317852':
+                vacio = 0
+            elif dataUser['id'] == '318282':
+                vacio  = 0
+            elif dataUser['id'] == '277196':
+                vacio = 0
+            elif dataUser['id'] == '308890':
+                vacio = 0
+            else:
+                #
+
+                listUsers = '216004,215992'
+                listUsers += ',' + str(dataUser['id'])
+                listGrantAcces = '216004,215992'
+                listGrantAcces += ',' + str(dataUser['id'])
+                if len(listUsers) > 2:
+                    count_task += 1
+                    print('ID:' + str(dataUser['id']) + ' Name:' + str(dataUser['first-name'] + ' ' + str(dataUser['last-name'])))
+                    print('Cear Tareas de registro')
+                    print('Dias registrado ' + str(count_days_user) + '/5')
+                    print(str(count_task) + '.-' + 'dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
+                    create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
+                    count_days_user = 0
 
 
     print ('---------------------------------------------------------------------')
