@@ -93,7 +93,7 @@ def verifyConnectedTime():
             print('Cear Tareas de registro')
             print('Dias registrado ' + str(count_days_user) + '/5')
             print(str(count_task) + '.-' + 'dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
-            #create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
+            create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
             count_days_user = 0
 
 
