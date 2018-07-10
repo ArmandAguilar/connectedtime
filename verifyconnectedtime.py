@@ -95,8 +95,8 @@ def verifyConnectedTime():
             elif dataUser['id'] == '308890':
                 vacio = 0
             else:
-                listUsers = '216004,215992'
-                listUsers += ',' + str(dataUser['id'])
+                listUsers = str(dataUser['id'])
+                listUsers += ',216004,215992'
                 listGrantAcces = '216004,215992'
                 listGrantAcces += ',' + str(dataUser['id'])
                 if len(listUsers) > 2:
@@ -105,7 +105,7 @@ def verifyConnectedTime():
                     print('Cear Tareas de registro')
                     print('Dias registrado ' + str(count_days_user) + '/5')
                     print(str(count_task) + '.-' + 'dayStart=' + str(listdays[0]) +  ',dayEnd=' + str(listdays[4]) + ',listUser=' + str(listUsers) +  ',listGrantAcces=' + str(listGrantAcces))
-                    create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces)
+                    create_a_task(dayStart=listdays[0], dayEnd=listdays[4], listUser=listUsers, listGrantAcces=listGrantAcces,idUser=dataUser['id'])
                     count_days_user = 0
 
 
